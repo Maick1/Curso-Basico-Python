@@ -22,6 +22,26 @@
  * Cada lenguaje sigue una convenciones que debes de respetar para que el código se entienda.
  */ """
 
+def retornar_num(x,y) -> int: 
+    cont= 0
+    for num in range (1,101):
+        if num %3 == 0 and num % 5 == 0:
+            print(x+y)
+        elif num % 3 ==0:
+            print (x)
+        elif num % 5 ==0:
+            print (y)
+        else:
+            print (num)
+            cont+=1
+    return cont
+
+print (retornar_num("fuzz","buzz"))
+
+
+
+#######################################################
+
 #funciones definidas por el usuario
 
  #funciones Simples
