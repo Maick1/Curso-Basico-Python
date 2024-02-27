@@ -59,14 +59,96 @@ print(return_greet())
 
 #funcion con argumento
 def arg_greet(greet ,name):
+
+    ##f=interpolacion
     print(f"{greet},{name}")
 
 arg_greet("Hi","Michael")
 
 
 #funcion con argumento predeterminado
+#no tiene parametro le doy un parametro
 def default_arg_greet(name="Python"):
     print(f"Hola,{name}")
 
 default_arg_greet ("Michael")
 default_arg_greet ()
+
+
+#con argumento y retorno
+def return_args_greet (greet,name):
+    return f"{greet},{name}"
+
+print(return_args_greet("hi","brais")) 
+
+
+#funcion con retorno de varios valores tuplas de valores
+def multiple_return_greet():
+    return "hola","python"
+
+#desacoplar
+greet,name=multiple_return_greet() 
+print(greet)
+print(name)
+
+
+#con un numero variable de argumentos
+#guarda mas de un resultado ej for
+def variable_arg_greet (*names):
+    for name in names:
+        print(f"Hola,{name}")
+
+variable_arg_greet ("python","Michael","Asus","Perro")
+
+
+#con un numero variable de argumentos con palabra clave
+def variable_key_arg_greet (**names):
+    for key,value in names.items():
+        print(f"{value} ({key})")
+
+variable_key_arg_greet (languaje="python",
+                        name="Michael",
+                        marca="Asus",
+                        edad=25)
+
+
+
+####Funcion dentro de otra funcion 
+def outer_function():
+    def inner_function():
+        print ("Funcion interna: Hola, Python !!")
+
+    inner_function()
+
+outer_function()
+
+
+#Funciones de lenguajes (BUILT-in)
+
+#Retorna el numero de la cadena de texto
+print(len("Michael"))
+
+#Retorna tipo de datos
+print (type("Michael"))
+
+#Mayuscula
+print ("Michael".upper())
+
+
+
+###Variables locales y globales Ambito scope
+##variable local solo es para un ambito global es para todo el ambito
+##siempre restringir el ambito buenas practicas
+global_variable = "pyhon"
+
+print(global_variable)
+
+
+def hello_python():
+    local_var= "Hola"
+    print(f"{local_var},{global_variable})")
+
+
+print(global_variable)
+
+hello_python()
